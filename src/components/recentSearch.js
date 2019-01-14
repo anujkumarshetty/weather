@@ -21,6 +21,13 @@ const styles = theme => ({
   },
   spanClass: {
     marginTop: "100px"
+  },
+  tempSize : {
+      fontSize : '13px'
+  },
+  date : {
+    marginTop:'5px', 
+    fontSize:"13px"
   }
 });
 
@@ -40,7 +47,6 @@ class RecentSearch extends React.Component {
     const { spacing } = this.state;
 
     return (
-        
         <div>
             { searchResult.length ===0 ? "": <h4 className={classes.header}>Recent Searches</h4>}
             <Grid container className={classes.root} spacing={16}>
@@ -61,7 +67,7 @@ class RecentSearch extends React.Component {
                                 <Grid container spacing={24}>
                                 
                                 <Grid item xs={5}>
-                                <span style={{marginTop:'5px', fontSize:"13px"}}>
+                                <span className={classes.date}>
                                     {index === 0 ? "Today":""}
                                     {index === 1 ? "Tomorrow":""}
                                     {(index === 0) || (index === 1) ? "": day.applicable_date} 
@@ -78,11 +84,10 @@ class RecentSearch extends React.Component {
                                     />
                                 </Grid>
                                 <Grid item xs={5}>
-                                <span style={{ fontSize:"13px" }}>
+                                <span className={classes.tempSize}>
                                     {day.weather_state_name}
                                     ↑ {Math.floor(day.max_temp)}℃ | ↓{Math.floor(day.min_temp)}℃
-                                    </span>
-                                    
+                                    </span> 
                                 </Grid>
                             </Grid>
                             </div>
