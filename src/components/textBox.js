@@ -5,13 +5,16 @@ import TextField from "@material-ui/core/TextField";
 import SearchButton from "./searchButton";
 
 const styles = theme => ({
-  container: {
-    display: "flex",
-    flexWrap: "wrap"
-  },
+  // container: {
+  //   display: "flex",
+  //   flexWrap: "noWrap"
+  // },
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
+    marginLeft: '25%',
+    marginRight: '25%',
+    width: "300px",
+    marginTop : '20px',
+    marginBottom : '50px'
   },
   dense: {
     marginTop: 16
@@ -25,7 +28,7 @@ class TextBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: ""
+      location: "bangalore"
     };
   }
 
@@ -39,7 +42,7 @@ class TextBox extends Component {
     let { classes } = this.props;
     return (
       <div>
-        <form className={classes.container} noValidate autoComplete="off">
+        <form className={classes.container} noValidate autoComplete="on">
           {this.state.name}
           <TextField
             required
