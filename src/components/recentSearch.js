@@ -71,6 +71,7 @@ class RecentSearch extends React.Component {
                                     {index === 0 ? "Today":""}
                                     {index === 1 ? "Tomorrow":""}
                                     {(index === 0) || (index === 1) ? "": day.applicable_date} 
+                                    
                                 </span>
                                 </Grid>
                                 <Grid item xs={2} >
