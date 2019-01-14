@@ -8,7 +8,6 @@ class App extends Component {
       <div>
         <h2 style={{ textAlign: "center",marginBottom: '50px' }}>Weather Forcast</h2>
         <TextBox />
-        
       </div>
     );
   }
