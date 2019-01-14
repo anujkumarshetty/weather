@@ -145,7 +145,7 @@ class SearchButton extends Component {
           ContentProps={{
             'aria-describedby': 'message-id',
           }}
-          message={this.props.location==-"" ? "Cannot be empty, Please type a city name.":<span id="message-id">Oops!! cannot find data for <span style={{color:'red'}}>  {this.props.location}</span>, Try rephrasing.</span> }
+          message={this.props.location==-"" ? "Cannot be empty, Please try a city name.":<span id="message-id">Oops!! cannot find data for <span style={{color:'red'}}>  {this.props.location}</span>, Try rephrasing.</span> }
           action={[
             <IconButton
               key="close"
