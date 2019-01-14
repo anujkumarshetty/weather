@@ -50,7 +50,8 @@ class SearchButton extends Component {
       weatherData: {},
       loader: false,
       searchResult: [],
-      open: false
+      open: false,
+      
     };
   }
 
@@ -70,25 +71,30 @@ class SearchButton extends Component {
   handleChange = event => {
     console.log(this.props.location);
     this.setState({ loader: true });
-    axios.get(`http://localhost:8000/city/${this.props.location}`).then(res => {
-      console.log(res.data[0]);
-    if(res.data.length>0){
-      axios
-      .get(`http://localhost:8000/woeid/${res.data[0].woeid}`)
-      .then(res => {
-        console.log(res.data);
-        this.setState({ weatherData: res.data });
-        this.setState({
-          searchResult: [...this.state.searchResult, res.data]
+    if(this.props.location){
+      axios.get(`http://localhost:8000/city/${this.props.location}`).then(res => {
+        console.log(res.data[0]);
+      if(res.data.length>0){
+        axios
+        .get(`http://localhost:8000/woeid/${res.data[0].woeid}`)
+        .then(res => {
+          console.log(res.data);
+          this.setState({ weatherData: res.data });
+          this.setState({
+            searchResult: [...this.state.searchResult, res.data]
+          });
+          console.log(this.state.searchResult);
+          this.setState({ loader: false });
         });
-        console.log(this.state.searchResult);
-        this.setState({ loader: false });
+      }else{
+        this.handleClick();
+        this.setState({ loader: false });   
+      }
       });
-    }else{
-      this.handleClick();
-      this.setState({ loader: false });
-    }
-    });
+  } else {
+    this.handleClick();
+    this.setState({ loader: false });
+  }
   };
 
   render() {
@@ -139,7 +145,7 @@ class SearchButton extends Component {
           ContentProps={{
             'aria-describedby': 'message-id',
           }}
-          message={<span id="message-id">Oops!! cannot find data for <span style={{color:'red'}}>  {this.props.location}</span>, Try rephrasing. </span>}
+          message={this.props.location==-"" ? "Cannot be empty, Please type a city name.":<span id="message-id">Oops!! cannot find data for <span style={{color:'red'}}>  {this.props.location}</span>, Try rephrasing.</span> }
           action={[
             <IconButton
               key="close"

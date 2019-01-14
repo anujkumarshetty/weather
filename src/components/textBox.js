@@ -5,10 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import SearchButton from "./searchButton";
 
 const styles = theme => ({
-  // container: {
-  //   display: "flex",
-  //   flexWrap: "noWrap"
-  // },
+ 
   textField: {
     marginLeft: '25%',
     marginRight: '25%',
@@ -28,7 +25,7 @@ class TextBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      location: "bangalore"
+      location: ""
     };
   }
 

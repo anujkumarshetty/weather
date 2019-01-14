@@ -24,5 +24,21 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anujkumarshetty/weather.git"
+  },
+  "keywords": [
+    "weater",
+    "react",
+    "weather",
+    "metaweather"
+  ],
+  "author": "Anuj Kumar R",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anujkumarshetty/weather/issues"
+  },
+  "homepage": "https://github.com/anujkumarshetty/weather#readme"
 }
