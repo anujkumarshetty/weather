@@ -66,7 +66,7 @@ class RecentSearch extends React.Component {
                                 {index === 0 ? <hr /> : ""}
                                 <Grid container spacing={24}>
                                 
-                                <Grid item xs={5}>
+                                <Grid item xs={4}>
                                 <span className={classes.date}>
                                     {index === 0 ? "Today":""}
                                     {index === 1 ? "Tomorrow":""}
@@ -84,10 +84,11 @@ class RecentSearch extends React.Component {
                                     style={{marginLeft: '-13px'}}
                                     />
                                 </Grid>
-                                <Grid item xs={5}>
+                                <Grid item xs={6}>
                                 <span className={classes.tempSize}>
                                     {day.weather_state_name}
-                                    ↑ {Math.floor(day.max_temp)}℃ | ↓{Math.floor(day.min_temp)}℃
+                                    <br/>
+                                    ↑ {Math.floor(day.max_temp)}℃  ↓{Math.floor(day.min_temp)}℃
                                     </span> 
                                 </Grid>
                             </Grid>
